@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+juego-lucha,com.juego.patrones.factory,PersonajeFactory,3,24,0,3,1,4,1,3,1,1
+juego-lucha,com.juego.patrones.decorator,PersonajeConEspada,0,20,0,0,0,7,0,2,0,2
+juego-lucha,com.juego.patrones.decorator,PersonajeDecorador,5,8,0,0,2,3,1,1,1,1
+juego-lucha,com.juego.model,Guerrero,19,4,0,0,5,2,1,1,1,1
+juego-lucha,com.juego.model,Mago,19,4,0,0,5,2,1,1,1,1
+juego-lucha,com.juego.model,Personaje,0,68,0,6,0,18,0,9,0,6
+juego-lucha,com.juego.juego,JuegoLucha,144,0,8,0,39,0,8,0,4,0

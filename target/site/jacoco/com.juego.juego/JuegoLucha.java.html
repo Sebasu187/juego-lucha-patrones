@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>JuegoLucha.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">juego-lucha</a> &gt; <a href="index.source.html" class="el_package">com.juego.juego</a> &gt; <span class="el_source">JuegoLucha.java</span></div><h1>JuegoLucha.java</h1><pre class="source lang-java linenums">package com.juego.juego;
+
+import com.juego.model.Personaje;
+import com.juego.patrones.factory.PersonajeFactory;
+import com.juego.patrones.decorator.PersonajeConEspada;
+import java.util.Scanner;
+
+public class JuegoLucha {
+    private Personaje jugador1;
+    private Personaje jugador2;
+
+<span class="nc" id="L12">    public JuegoLucha(Personaje p1, Personaje p2) {</span>
+<span class="nc" id="L13">        this.jugador1 = p1;</span>
+<span class="nc" id="L14">        this.jugador2 = p2;</span>
+<span class="nc" id="L15">    }</span>
+
+    public void iniciarPelea() {
+<span class="nc" id="L18">        System.out.println(&quot;\n=== LA PELEA COMIENZA ===&quot;);</span>
+<span class="nc" id="L19">        System.out.println(jugador1.getNombre() + &quot; VS &quot; + jugador2.getNombre());</span>
+<span class="nc" id="L20">        System.out.println(&quot;========================\n&quot;);</span>
+
+<span class="nc bnc" id="L22" title="All 4 branches missed.">        while (jugador1.estaVivo() &amp;&amp; jugador2.estaVivo()) {</span>
+<span class="nc" id="L23">            turno(jugador1, jugador2);</span>
+<span class="nc bnc" id="L24" title="All 2 branches missed.">            if (jugador2.estaVivo()) {</span>
+<span class="nc" id="L25">                turno(jugador2, jugador1);</span>
+            }
+        }
+
+<span class="nc" id="L29">        System.out.println(&quot;\n=== RESULTADO ===&quot;);</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">        if (jugador1.estaVivo()) {</span>
+<span class="nc" id="L31">            System.out.println(&quot;🏆 &quot; + jugador1.getNombre() + &quot; ha ganado la pelea!&quot;);</span>
+        } else {
+<span class="nc" id="L33">            System.out.println(&quot;🏆 &quot; + jugador2.getNombre() + &quot; ha ganado la pelea!&quot;);</span>
+        }
+<span class="nc" id="L35">    }</span>
+
+    private void turno(Personaje atacante, Personaje defensor) {
+<span class="nc" id="L38">        System.out.println(&quot;\nTurno de &quot; + atacante.getNombre()</span>
+<span class="nc" id="L39">                + &quot; (HP: &quot; + atacante.getPuntosDeVida() + &quot;)&quot;</span>
+<span class="nc" id="L40">                + &quot; vs &quot; + defensor.getNombre()</span>
+<span class="nc" id="L41">                + &quot; (HP: &quot; + defensor.getPuntosDeVida() + &quot;)&quot;);</span>
+<span class="nc" id="L42">        atacante.atacar(defensor);</span>
+<span class="nc" id="L43">    }</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L46">        Scanner scanner = new Scanner(System.in);</span>
+
+<span class="nc" id="L48">        System.out.println(&quot;=== JUEGO DE LUCHA ===&quot;);</span>
+<span class="nc" id="L49">        System.out.print(&quot;Tipo del jugador 1 (guerrero/mago): &quot;);</span>
+<span class="nc" id="L50">        String tipo1 = scanner.nextLine();</span>
+<span class="nc" id="L51">        System.out.print(&quot;Nombre del jugador 1: &quot;);</span>
+<span class="nc" id="L52">        String nombre1 = scanner.nextLine();</span>
+
+<span class="nc" id="L54">        System.out.print(&quot;Tipo del jugador 2 (guerrero/mago): &quot;);</span>
+<span class="nc" id="L55">        String tipo2 = scanner.nextLine();</span>
+<span class="nc" id="L56">        System.out.print(&quot;Nombre del jugador 2: &quot;);</span>
+<span class="nc" id="L57">        String nombre2 = scanner.nextLine();</span>
+
+        // Usamos la FACTORY para crear los personajes
+<span class="nc" id="L60">        Personaje p1 = PersonajeFactory.crearPersonaje(tipo1, nombre1);</span>
+<span class="nc" id="L61">        Personaje p2 = PersonajeFactory.crearPersonaje(tipo2, nombre2);</span>
+
+        // Usamos el DECORATOR para darle espada al jugador 1
+<span class="nc" id="L64">        p1 = new PersonajeConEspada(p1);</span>
+<span class="nc" id="L65">        System.out.println(&quot;\n&quot; + p1.getNombre() + &quot; equipa una Espada Magica!&quot;);</span>
+
+<span class="nc" id="L67">        JuegoLucha juego = new JuegoLucha(p1, p2);</span>
+<span class="nc" id="L68">        juego.iniciarPelea();</span>
+<span class="nc" id="L69">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

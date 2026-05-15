@@ -1,0 +1,7 @@
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/juego/JuegoLucha.java
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/model/Guerrero.java
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/model/Mago.java
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/model/Personaje.java
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/patrones/decorator/PersonajeConEspada.java
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/patrones/decorator/PersonajeDecorador.java
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/patrones/factory/PersonajeFactory.java

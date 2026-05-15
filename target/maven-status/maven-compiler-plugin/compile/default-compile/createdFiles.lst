@@ -1,0 +1,7 @@
+com/juego/patrones/decorator/PersonajeConEspada.class
+com/juego/model/Guerrero.class
+com/juego/patrones/factory/PersonajeFactory.class
+com/juego/model/Personaje.class
+com/juego/juego/JuegoLucha.class
+com/juego/patrones/decorator/PersonajeDecorador.class
+com/juego/model/Mago.class
