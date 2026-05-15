@@ -1,6 +1,6 @@
 # Juego de Lucha - Patrones de Diseño
 
-![Java CI](https://github.com/TU_USUARIO/juego-lucha-patrones/actions/workflows/ci.yml/badge.svg)
+![Java CI](https://github.com/Sebasu187/juego-lucha-patrones/actions/workflows/ci.yml/badge.svg)
 
 ## Descripción
 Juego de lucha por turnos en Java, implementando patrones de diseño creacionales y estructurales.
